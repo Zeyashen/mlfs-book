@@ -6,7 +6,7 @@ This project predicts **PM2.5 air quality** for a given sensor location using **
 
 ## 🏙️ 1. Sensor Location
 
-We used **Beijing - Dongchengdongsi** as the target air quality monitoring station.
+We used **Kalgoorlie，Western，Austrilia** as the target air quality monitoring station.
 
 | Parameter | Value |
 |------------|--------|
@@ -59,7 +59,7 @@ To improve performance, we added **three new lagged PM2.5 features**:
 |------------|----------|--------------|
 | **air_quality_lagged_3_days** | v1 | Extended air quality data with lag features (`pm25_lag1`, `pm25_lag2`, `pm25_lag3`) |
 | **weather** | v1 | Same as before |
-| **air_quality_fv** | v2 | Joined `air_quality v2` + `weather v1` (including lag features) |
+| **air_quality_fv** | v2 | Joined `air_quality_lagged_3_days v1` + `weather v1` (including lag features) |
 
 ### ✅ New Model Trained & Registered
 | Model Name |  Description |
