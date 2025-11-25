@@ -27,15 +27,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: load environment variables from .env  # MODIFIED
-        run: |
-          set -o allexport
-          source .env
-          set +o allexport
-
       - name: execute python workflows from bash script
-        # env:
-        #   HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
+        env:
+          HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
         run: |
           cd notebooks/airquality
           jupyter nbconvert --to notebook --execute 2_air_quality_feature_pipeline.ipynb
